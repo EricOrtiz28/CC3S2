@@ -1,0 +1,34 @@
+name: CI Pipeline  # Nombre del flujo de trabajo.
+
+on:  # Define los eventos que desencadenan este flujo de trabajo.
+  push:  # Ejecuta el flujo de trabajo cuando hay un push.
+    branches:  # Especifica en qué ramas se debe ejecutar el flujo de trabajo cuando ocurre un push.
+      - main  # El flujo de trabajo se ejecutará solo si el push se realiza a la rama "main".
+  pull_request:  # Ejecuta el flujo de trabajo cuando se abre o se actualiza un pull request.
+    branches:  # Especifica en qué ramas se debe ejecutar el flujo de trabajo cuando se abre o actualiza un pull request.
+      - main  # El flujo de trabajo se ejecutará solo si el pull request está dirigido a la rama "main".
+
+jobs:  # Define los trabajos que se ejecutarán.
+  build:  # Nombre del trabajo.
+    runs-on: ubuntu-latest  # Especifica el sistema operativo en el que se ejecutará el trabajo.
+
+    steps:  # Define los pasos que se ejecutarán dentro del trabajo.
+    - name: Checkout code  # Nombre del paso para referencia.
+      uses: actions/checkout@v2  # Utiliza la acción de checkout de GitHub para clonar el repositorio en el entorno de trabajo.
+
+    - name: Set up Node.js  # Nombre del paso para configurar Node.js.
+      uses: actions/setup-node@v2  # Utiliza la acción de configuración de Node.js en GitHub Actions.
+      with:  # Configura parámetros adicionales para la acción.
+        node-version: '14'  # Especifica la versión de Node.js que se instalará.
+
+    - name: Install dependencies  # Nombre del paso para instalar dependencias.
+      run: |
+        cd "Actividad 1/devops-practice"  # Cambia al directorio donde está el proyecto.
+        npm install  
+      # Ejecuta el comando 'npm install' para instalar las dependencias del proyecto especificadas en el archivo package.json.
+
+    - name: Run tests  # Nombre del paso para ejecutar pruebas.
+      run: |
+        cd "Actividad 1/devops-practice"  # Cambia al directorio donde está el proyecto.
+        npm test  
+      # Ejecuta el comando 'npm test' para correr las pruebas definidas en el proyecto.
