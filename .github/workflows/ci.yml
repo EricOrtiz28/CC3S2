@@ -1,4 +1,4 @@
-name: CI Pipeline  # Nombre del flujo de trabajo.
+name: CI/CD Pipeline  # Nombre del flujo de trabajo.
 
 on:  # Define los eventos que desencadenan este flujo de trabajo.
   push:  # Ejecuta el flujo de trabajo cuando hay un push.
@@ -13,7 +13,7 @@ jobs:  # Define los trabajos que se ejecutarán.
     runs-on: ubuntu-latest  # Especifica el sistema operativo en el que se ejecutará el trabajo.
 
     steps:  # Define los pasos que se ejecutarán dentro del trabajo.
-    - name: Checkout code  # Nombre del paso para referencia.
+    - name: Checkout code  # Nombre del paso para clonar el código.
       uses: actions/checkout@v2  # Utiliza la acción de checkout de GitHub para clonar el repositorio en el entorno de trabajo.
 
     - name: Set up Node.js  # Nombre del paso para configurar Node.js.
@@ -24,11 +24,19 @@ jobs:  # Define los trabajos que se ejecutarán.
     - name: Install dependencies  # Nombre del paso para instalar dependencias.
       run: |
         cd "Actividad 1/devops-practice"  # Cambia al directorio donde está el proyecto.
-        npm install  
-      # Ejecuta el comando 'npm install' para instalar las dependencias del proyecto especificadas en el archivo package.json.
+        npm install  # Ejecuta el comando 'npm install' para instalar las dependencias del proyecto especificadas en el archivo package.json.
 
     - name: Run tests  # Nombre del paso para ejecutar pruebas.
       run: |
         cd "Actividad 1/devops-practice"  # Cambia al directorio donde está el proyecto.
-        npm test  
-      # Ejecuta el comando 'npm test' para correr las pruebas definidas en el proyecto.
+        npm test  # Ejecuta el comando 'npm test' para correr las pruebas definidas en el proyecto.
+
+    - name: Build Docker image  # Nombre del paso para construir la imagen Docker.
+      run: |
+        cd "Actividad 1/devops-practice"  # Cambia al directorio donde está el Dockerfile.
+        docker build -t devops-practice .  # Construye la imagen Docker con la etiqueta 'devops-practice'.
+
+    - name: Run Docker container  # Nombre del paso para ejecutar el contenedor Docker.
+      run: |
+        cd "Actividad 1/devops-practice"  # Cambia al directorio donde está la imagen Docker.
+        docker run -d -p 3000:3000 devops-practice  # Ejecuta el contenedor Docker en segundo plano con el puerto 3000 expuesto.
