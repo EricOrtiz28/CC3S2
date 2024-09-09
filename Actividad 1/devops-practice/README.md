@@ -28,7 +28,7 @@ npm init -y            # Inicializo un nuevo proyecto de Node.js predeterminado 
 > Como podemos observar, los comandos se ejecutaron de forma correcta, creando el proyecto con las configuraciones predeterminadas.
 2. Instalar las dependencias necesarias:
 ~~~
-npm install express jest  # Instala las dependencias de Express y Jest en el proyecto.
+ npm install express jest supertest  # Instala las dependencias de Express y Jest en el proyecto.
 ~~~
 ![alt text](imagenes/image-2.png)
 ![alt text](imagenes/image-3.png)
@@ -94,6 +94,7 @@ test('should return Hello, World!', async () => {
 >- **dependencies:** Paquetes necesarios para ejecutar la aplicación.
 >- **devDependencies:** Paquetes necesarios solo para el desarrollo y pruebas.
 
+![alt text](imagenes/image-28.png)
 **2. Pipeline CI/CD**
 
 **Parte 1:** Configura integración continua (CI) con GitHub Actions
@@ -277,11 +278,13 @@ services:  # Define los servicios que Docker Compose gestionará.
 ![alt text](imagenes/image-24.png)
  2. Corre la aplicación usando Docker Compose:
  ~~~
-docker-compose up --build -d  # Construye la imagen Docker (si no está construida o si hay cambios) y luego levanta los servicios definidos en docker-compose.yml en segundo plano (detached mode)
+docker compose up --build -d  # Construye la imagen Docker (si no está construida o si hay cambios) y luego levanta los servicios definidos en docker-compose.yml en segundo plano (detached mode)
  ~~~
 ![alt text](imagenes/image-25.png)
 ![alt text](imagenes/image-26.png)
 ![alt text](imagenes/image-27.png)
+![alt text](imagenes/image-29.png)
+
 **4. Documentación y evaluación**
  - Documenta el proceso seguido, desde la configuración del entorno hasta la creación del pipeline
 CI/CD.
