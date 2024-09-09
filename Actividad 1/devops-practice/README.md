@@ -95,6 +95,7 @@ test('should return Hello, World!', async () => {
 >- **devDependencies:** Paquetes necesarios solo para el desarrollo y pruebas.
 
 ![alt text](imagenes/image-28.png)
+
 **2. Pipeline CI/CD**
 
 **Parte 1:** Configura integración continua (CI) con GitHub Actions
