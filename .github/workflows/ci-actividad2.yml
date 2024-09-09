@@ -19,7 +19,7 @@ jobs:  # Define los trabajos que se ejecutarán.
     - name: Set up Node.js  # Nombre del paso para configurar Node.js.
       uses: actions/setup-node@v2  # Utiliza la acción de configuración de Node.js en GitHub Actions.
       with:  # Configura parámetros adicionales para la acción.
-        node-version: '14'  # Especifica la versión de Node.js que se instalará.
+        node-version: '18'  # Especifica la versión de Node.js que se instalará.
 
     - name: Install dependencies  # Nombre del paso para instalar dependencias.
       run: |
