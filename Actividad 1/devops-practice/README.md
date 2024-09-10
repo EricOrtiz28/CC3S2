@@ -264,7 +264,7 @@ funcionando.
  ~~~
  version: '3.8'  # Especifica la versión de la sintaxis de Docker Compose que se está utilizando.
 
-services:  # Define los servicios que Docker Compose gestionará.
+ services:  # Define los servicios que Docker Compose gestionará.
 
   app:  # Nombre del servicio.
 

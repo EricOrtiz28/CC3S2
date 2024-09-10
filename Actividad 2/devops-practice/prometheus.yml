@@ -1,0 +1,8 @@
+global:  # Configuración global que afecta a todos los trabajos de scraping en Prometheus.
+  scrape_interval: 15s  # Intervalo de tiempo entre cada recolección de métricas (scraping). En este caso, cada 15 segundos.
+
+scrape_configs:  # Define los trabajos de scraping que Prometheus gestionará.
+  - job_name: 'node-app'  # Nombre del trabajo de scraping, utilizado para etiquetar y organizar las métricas recolectadas.
+
+    static_configs:  # Configuración estática que define los objetivos (targets) para recolectar métricas.
+      - targets: ['app:3000']  # Lista de objetivos. En este caso, Prometheus hará scraping en el servicio 'app' que está expuesto en el puerto 3000.

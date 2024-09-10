@@ -5,7 +5,7 @@ app.get('/', (req, res) => {  // Define una ruta GET en la raíz
   res.send('Hello, World!');  // Envía una respuesta de texto 'Hello, World!' al cliente
 });
 
-const port = process.env.PORT || 3000;  // Define el puerto en el que la aplicación escuchará
+const port = process.env.PORT || 3001;  // Define el puerto en el que la aplicación escuchará
 
 // Solo inicia el servidor si el archivo no es requerido por otro módulo (como en las pruebas)
 if (require.main === module) {
