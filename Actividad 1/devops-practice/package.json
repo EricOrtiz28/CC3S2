@@ -1,14 +1,19 @@
 {
   "name": "devops-practice",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "PORT=3001 jest"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.20.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   },
-  "devDependencies": {
-    "jest": "^27.5.1",
-    "supertest": "^6.3.4"
+  "overrides": {
+    "express": {
+      "path-to-regexp": "0.1.10"
+    }
   }
 }
