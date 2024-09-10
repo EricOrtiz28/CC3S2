@@ -5,7 +5,7 @@
     "test": "PORT=3001 jest"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.20.0"
   },
   "devDependencies": {
     "jest": "^27.5.1",
