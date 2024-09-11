@@ -7,13 +7,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "^5.0.0",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
-  },
-  "overrides": {
-    "express": {
-      "path-to-regexp": "0.1.10"
-    }
   }
+
 }
