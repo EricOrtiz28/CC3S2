@@ -141,3 +141,8 @@ git bisect good <último_commit_bueno>  # Indica que este commit es correcto, se
 git bisect reset  # Sale del modo bisect y vuelve al estado normal
 ~~~
 ![alt text](imagenes/image-30.png)
+
+**8. Documentación y reflexión**
+- Paso 1: Documenta todos los comandos usados y los resultados obtenidos en cada paso.
+- Paso 2: Reflexiona sobre la utilidad de cada comando en un flujo de trabajo de DevOps.
+> Trabajar con Git en un entorno DevOps ha sido una experiencia clave para mejorar la colaboración y el control sobre el proyecto. Crear ramas para desarrollar en paralelo facilita que cada uno pueda aportar sin interferir en la versión estable, y herramientas como `git mergetool` hacen que resolver conflictos sea más sencillo y visual. Cuando he cometido errores, revertir cambios con `git revert` o reorganizar el historial con `git reset` me ha permitido corregir sin perder el progreso. También he encontrado muy útil el uso de etiquetas para marcar versiones importantes y tener puntos claros de referencia. Además, `git bisect` ha sido una herramienta increíble para depurar, ayudándome a localizar errores de manera rápida y eficiente. En general, Git me ha dado control y flexibilidad, haciendo que todo el proceso de desarrollo sea más ágil y confiable.

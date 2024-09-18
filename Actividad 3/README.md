@@ -537,6 +537,7 @@ git stash pop   # Recupera los cambios guardados previamente y los aplica en el 
 
 5. Revisar el historial y confirmar la correcta aplicación de los cambios:
  - Usa git log para revisar el historial de commits y verificar que todos los cambios se han aplicado correctamente.
+ 
 ~~~
 git log --graph --oneline --all   # Revisa el historial de commits para verificar que los cambios se han aplicado correctamente
 ~~~
