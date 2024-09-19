@@ -1,5 +1,5 @@
 # Usa la imagen oficial de Node.js
-FROM node:14
+FROM node:18
 # Establece el directorio de trabajo en el contenedor
 WORKDIR /app
 # Copia los archivos package.json y package-lock.json

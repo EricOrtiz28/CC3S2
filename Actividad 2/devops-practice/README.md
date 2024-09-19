@@ -197,7 +197,7 @@ jobs:  # Define los trabajos que se ejecutarán.
 2. Construye y corre el contenedor:
  ~~~
 docker build -t devops-practice .  # Construye una imagen Docker a partir del Dockerfile en el directorio actual, etiquetándola como devops-practice
-docker run -p 3001:3001 devops-practice  # Ejecuta un contenedor basado en la imagen 'devops-practice' y mapea el puerto 3000 del contenedor al puerto 3000 de la máquina local
+docker run -p 3001:3001 devops-practice  # Ejecuta un contenedor basado en la imagen 'devops-practice' y mapea el puerto 3001 del contenedor al puerto 3001 de la máquina local
  ~~~
 
 ![alt text](imagenes/image-38.png)
@@ -267,7 +267,7 @@ services:  # Define los servicios que Docker Compose gestionará.
     build: .  # Indica que Docker Compose debe construir la imagen Docker utilizando el Dockerfile en el directorio actual.
     
     ports:  # Configura el mapeo de puertos entre el contenedor y tu máquina local.
-      - "3001:3001"  # Mapea el puerto 3000 del contenedor al puerto 3000 de tu máquina local, permitiendo el acceso a la aplicación.
+      - "3001:3001"  # Mapea el puerto 3001 del contenedor al puerto 3001 de tu máquina local, permitiendo el acceso a la aplicación.
 
     environment:  # Define variables de entorno que se pasarán al contenedor cuando se ejecute.
       - NODE_ENV=production  # Configura la variable de entorno 'NODE_ENV' como 'production'. Esto indica que la aplicación se ejecutará en modo producción.
@@ -287,7 +287,7 @@ services:  # Define los servicios que Docker Compose gestionará.
     image: grafana/grafana  # Especifica la imagen Docker que se usará para el servicio Grafana (de la imagen oficial de Grafana en Docker Hub).
 
     ports:  # Configura el mapeo de puertos para Grafana.
-      - "3000:3000"  # Mapea el puerto 3001 del contenedor al puerto 3001 de tu máquina local, permitiendo el acceso a la interfaz de Grafana.
+      - "3000:3000"  # Mapea el puerto 3000 del contenedor al puerto 3000 de tu máquina local, permitiendo el acceso a la interfaz de Grafana.
  ~~~
 ![alt text](imagenes/image-37.png)
 ![alt text](imagenes/image-30.png)
