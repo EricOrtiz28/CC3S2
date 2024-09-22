@@ -7,6 +7,9 @@ on:  # Define los eventos que desencadenan este flujo de trabajo.
   pull_request:  # Ejecuta el flujo de trabajo cuando se abre o se actualiza un pull request.
     branches:  # Especifica en qué ramas se debe ejecutar el flujo de trabajo cuando se abre o actualiza un pull request.
       - main  # El flujo de trabajo se ejecutará solo si el pull request está dirigido a la rama "main".
+permissions:
+  contents: read
+  security-events: write
 
 jobs:  # Define los trabajos que se ejecutarán.
   build:  # Nombre del trabajo.
@@ -40,6 +43,9 @@ jobs:  # Define los trabajos que se ejecutarán.
       uses: github/codeql-action/init@v2
       with:
         languages: javascript
+
+    - name: Autobuild   # <-- Agregar el paso de Autobuild aquí
+      uses: github/codeql-action/autobuild@v2
 
     - name: Run CodeQL analysis
       uses: github/codeql-action/analyze@v2
