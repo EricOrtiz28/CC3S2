@@ -44,8 +44,11 @@ jobs:  # Define los trabajos que se ejecutarán.
       with:
         languages: javascript
 
-    - name: Autobuild   # <-- Agregar el paso de Autobuild aquí
+    - name: Autobuild
       uses: github/codeql-action/autobuild@v2
 
     - name: Run CodeQL analysis
       uses: github/codeql-action/analyze@v2
+
+    - name: Build and Deploy Docker Compose
+      run: docker compose up --build -d
