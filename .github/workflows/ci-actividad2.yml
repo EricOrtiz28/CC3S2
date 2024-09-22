@@ -35,3 +35,11 @@ jobs:  # Define los trabajos que se ejecutarán.
       run: |
         cd "Actividad 2/devops-practice"  # Cambia al directorio donde está el proyecto.
         npm audit  # Ejecuta el comando 'npm audit' para escanear las dependencias en busca de vulnerabilidades.
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: javascript
+
+    - name: Run CodeQL analysis
+      uses: github/codeql-action/analyze@v2
