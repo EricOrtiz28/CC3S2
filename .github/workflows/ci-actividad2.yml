@@ -50,5 +50,3 @@ jobs:  # Define los trabajos que se ejecutarán.
     - name: Run CodeQL analysis
       uses: github/codeql-action/analyze@v2
 
-    - name: Build and Deploy Docker Compose
-      run: docker compose up --build -d
