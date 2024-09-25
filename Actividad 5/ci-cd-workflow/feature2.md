@@ -1,0 +1,1 @@
+Segunda característica
