@@ -115,13 +115,11 @@ En este ejercicio, seguirás el flujo de trabajo diario de un desarrollador ági
 
 8. **Cierre del Sprint**  
    La revisión de la segunda historia se ha completado. Mueve la historia "Must persist counter across restarts" a "Done".  
-
 ![alt text](imagenes/parte2paso8real.jpg)
 
    **Estado Final del Sprint:**  
    El sprint ha terminado, pero la historia "Deploy service to the cloud" aún está en progreso. El Kanban board final debería verse así: 
-
-![alt text](imagenes/parte2final.jpg)
+   ![alt text](imagenes/parte2final.jpg)
 
 ---
 

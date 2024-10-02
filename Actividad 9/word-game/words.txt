@@ -1,0 +1,10 @@
+leon
+tigre
+elefante
+jirafa
+rinoceronte
+canguro
+koala
+delfin
+hipopotamo
+lobo
