@@ -29,14 +29,10 @@ jobs:
         working-directory: "Actividad 9"
         run: pyinstaller --onefile word-game/src/main.py --add-data "word-game/words.txt:word-game"
 
-      # Paso 4.1: Verificar contenido de dist para confirmar el nombre del archivo generado
-      - name: Verificar contenido de dist
-        run: ls -R "Actividad 9/word-game/src/dist"
-
-      # Paso 5: Crear release en GitHub con el binario generado
+      # Paso 5: Crear release en GitHub con el binario generado en "dist"
       - name: Crear release en GitHub
         uses: softprops/action-gh-release@v1
         with:
-          files: "Actividad 9/word-game/src/dist/*"  # Publica cualquier archivo en el directorio "dist"
+          files: "Actividad 9/dist/main"  
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Utiliza el token de GitHub para autenticación
