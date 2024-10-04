@@ -3,7 +3,7 @@ name: Crear release del juego
 on:
   push:
     tags:
-      - 'game-v*.*.*'  # Se ejecuta cuando se hace push de una etiqueta de versión (ej: v1.0.0)
+      - 'game-v*.*.*'  # Se ejecuta cuando se hace push de una etiqueta de versión (ej: game-v1.0.0)
 
 jobs:
   build:
@@ -26,13 +26,13 @@ jobs:
 
       # Paso 4: Empaquetar toda la carpeta "word-game" en un ejecutable
       - name: Empaquetar el juego en binario para Linux
-        working-directory: Actividad\ 9
+        working-directory: "Actividad 9"
         run: pyinstaller --onefile word-game/src/main.py --add-data "word-game/words.txt:word-game"  # Empaqueta "words.txt" en el directorio de "word-game"
 
       # Paso 5: Crear release en GitHub con el binario generado
       - name: Crear release en GitHub
         uses: softprops/action-gh-release@v1
         with:
-          files: word-game/src/dist/main  # Publica el binario en el release de GitHub
+          files: "Actividad 9/word-game/src/dist/main"  # Publica el binario en el release de GitHub con la ruta completa
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Utiliza el token de GitHub para autenticación
