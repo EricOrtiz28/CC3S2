@@ -24,15 +24,15 @@ jobs:
       - name: Instalar PyInstaller
         run: pip install pyinstaller  # Instala PyInstaller para empaquetar el script
 
-      # Paso 4: Empaquetar toda la carpeta "word-game" en un ejecutable
+      # Paso 4: Empaquetar el juego en un binario para Linux, incluyendo "words.txt"
       - name: Empaquetar el juego en binario para Linux
-        working-directory: "Actividad 9"
-        run: pyinstaller --onefile word-game/src/main.py --add-data "word-game/words.txt:word-game"  # Empaqueta "words.txt" en el directorio de "word-game"
+        working-directory: "Actividad 9"  # Usa comillas para manejar el espacio en el nombre
+        run: pyinstaller --onefile word-game/src/main.py --add-data "word-game/words.txt:word-game"  # Incluye "words.txt" en el directorio de "word-game"
 
       # Paso 5: Crear release en GitHub con el binario generado
       - name: Crear release en GitHub
         uses: softprops/action-gh-release@v1
         with:
-          files: "Actividad 9/word-game/src/dist/main"  # Publica el binario en el release de GitHub con la ruta completa
+          files: "Actividad 9/word-game/src/dist/*"  # Publica cualquier archivo en el directorio "dist"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Utiliza el token de GitHub para autenticación
