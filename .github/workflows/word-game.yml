@@ -3,7 +3,7 @@ name: Crear release del juego
 on:
   push:
     tags:
-      - 'v*.*.*'  # Se ejecuta cuando se hace push de una etiqueta de versión (ej: v1.0.0)
+      - 'game-v*.*.*'  # Se ejecuta cuando se hace push de una etiqueta de versión (ej: v1.0.0)
 
 jobs:
   build:
