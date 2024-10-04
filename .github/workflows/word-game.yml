@@ -27,7 +27,7 @@ jobs:
       # Paso 4: Empaquetar todo el directorio "word-game"
       - name: Empaquetar el juego en binario para Linux
         working-directory: "Actividad 9"
-        run: pyinstaller --onefile word-game/src/main.py --add-data "word-game/words.txt:word-game"
+        run: pyinstaller --onefile word-game/src/main.py --add-data "word-game/words.txt:."
 
       # Paso 5: Crear release en GitHub con el binario generado
       - name: Crear release en GitHub
