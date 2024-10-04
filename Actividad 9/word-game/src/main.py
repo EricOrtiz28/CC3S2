@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # Inicialización de variables de juego
     palabra_secreta = seleccionar_palabra()
     progreso = ['_'] * len(palabra_secreta)
-    intentos_restantes = 20
+    intentos_restantes = 10
     numero_pistas = 5
 
     print("\n===================================================\n")
@@ -93,6 +93,15 @@ if __name__ == "__main__":
         print(f"    Palabra: {' '.join(progreso)}\n")
         # Llama a la función para dar pistas, si es necesario
         progreso = dar_pista(palabra_secreta,progreso)
+
+    # Verificar si el jugador ha adivinado completamente la palabra
+    if '_' in progreso:
+        # Si quedan guiones bajos, significa que no se adivinó toda la palabra
+        print(f"Lo siento, has perdido. La palabra era: {''.join(palabra_secreta)}\n")
+
+    else: 
+         # Si no quedan guiones bajos, el jugador ha completado la palabra correctamente
+        print(f"¡Felicidades! Has adivinado la palabra: {''.join(progreso)}\n")
 
 
 
