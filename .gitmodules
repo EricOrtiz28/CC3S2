@@ -1,4 +1,3 @@
-
-[submodule "Actividades_DevContainer"]
-	path = Actividades_DevContainer
+[submodule "Actividades-DevContainer"]
+	path = Actividades-DevContainer
 	url = https://github.com/EricOrtiz28/TDD-BDD.git
