@@ -7,6 +7,7 @@
     "test": "PORT=3001 jest"
   },
   "dependencies": {
+    "cross-spawn": "^7.0.6",
     "express": "^5.0.0",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
